@@ -13191,7 +13191,6 @@ return {
 	["Wraning"] = "Warning",
 	["obove"] = "above",
 	["doubl"] = "double",
-	["const"] = "cost",
 	["delclaration"] = "declaration",
 	["bulletted"] = "bulleted",
 	["sellection"] = "selection",
