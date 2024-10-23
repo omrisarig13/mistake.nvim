@@ -12110,7 +12110,6 @@ return {
 	["Intellegent"] = "Intelligent",
 	["satart"] = "start",
 	["qustion"] = "question",
-	["ve"] = "be",
 	["deperecate"] = "deprecate",
 	["parital"] = "partial",
 	["sush"] = "such",
