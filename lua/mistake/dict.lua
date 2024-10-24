@@ -4940,7 +4940,6 @@ return {
 	["Enchanced"] = "Enhanced",
 	["Maintainance"] = "Maintenance",
 	["yeas"] = "year",
-	["expected"] = "unexpected",
 	["uunconfirmed"] = "unconfirmed",
 	["similiarity"] = "similarity",
 	["similiar"] = "similar",
