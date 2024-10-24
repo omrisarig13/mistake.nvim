@@ -8999,7 +8999,6 @@ return {
 	["thoses"] = "those",
 	["nesesary"] = "necessary",
 	["printf"] = "print",
-	["kinda"] = "kind",
 	["knownledge"] = "knowledge",
 	["prevelance"] = "prevalence",
 	["heterogenuous"] = "heterogeneous",
