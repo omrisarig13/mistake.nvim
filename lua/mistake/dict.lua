@@ -8003,7 +8003,6 @@ return {
 	["inspriation"] = "inspiration",
 	["unnecssary"] = "unnecessary",
 	["eny"] = "any",
-	["heard"] = "heart",
 	["completey"] = "completely",
 	["anywehre"] = "anywhere",
 	["inclyude"] = "include",
