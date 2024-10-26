@@ -414,7 +414,6 @@ return {
 	["treatent"] = "treatment",
 	["acutal"] = "actual",
 	["detial"] = "detail",
-	["cured"] = "curved",
 	["heigher"] = "higher",
 	["correponding"] = "corresponding",
 	["ingess"] = "ingress",
