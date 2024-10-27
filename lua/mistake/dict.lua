@@ -8990,7 +8990,6 @@ return {
 	["themt"] = "them",
 	["gratious"] = "gratuitous",
 	["takle"] = "tackle",
-	["bro"] = "pro",
 	["thoses"] = "those",
 	["nesesary"] = "necessary",
 	["printf"] = "print",
