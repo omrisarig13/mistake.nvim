@@ -5881,7 +5881,6 @@ return {
 	["persome"] = "person",
 	["nuymber"] = "number",
 	["partiton"] = "partition",
-	["Noe"] = "Now",
 	["overrid"] = "override",
 	["Unsignd"] = "Unsigned",
 	["represetantion"] = "representation",
