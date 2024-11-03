@@ -18412,7 +18412,6 @@ return {
 	["sfe"] = "safe",
 	["executible"] = "executable",
 	["mothodology"] = "methodology",
-	["AP"] = "TAP",
 	["Notbook"] = "Notebook",
 	["Muliple"] = "Multiple",
 	["suframe"] = "subframe",
