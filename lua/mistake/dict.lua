@@ -16174,7 +16174,6 @@ return {
 	["mamy"] = "many",
 	["rul"] = "rule",
 	["unexchangable"] = "unexchangeable",
-	["struct"] = "strict",
 	["backwords"] = "backwards",
 	["avegare"] = "average",
 	["Construcor"] = "Constructor",
