@@ -534,7 +534,6 @@ return {
 	["appication"] = "application",
 	["repetion"] = "repetition",
 	["reducted"] = "reduced",
-	["separated"] = "separation",
 	["brnach"] = "branch",
 	["forwader"] = "forwarder",
 	["densiti"] = "density",
