@@ -8406,7 +8406,6 @@ return {
 	["annotatin"] = "annotation",
 	["refinemnet"] = "refinement",
 	["inheritace"] = "inheritance",
-	["developing"] = "development",
 	["Netwok"] = "Network",
 	["invalidateNew"] = "invalidate",
 	["intereset"] = "interest",
