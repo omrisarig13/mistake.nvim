@@ -2,12 +2,13 @@
 
 ![Demo](https://github.com/user-attachments/assets/06167e5a-43cf-460b-b750-6fca75010f90)
 
-**mistake.nvim** is a spelling auto correct plugin for Neovim based on [GitHub's *"Fixed typo"* commits](https://github.com/mhagiwara/github-typo-corpus). 
+**mistake.nvim** is a spelling auto correct plugin for Neovim based on [GitHub's *"Fixed typo"* commits](https://github.com/mhagiwara/github-typo-corpus).
 
 ## Features
-- Includes over 20,000 entries for correction 
-- Lazy loads the correction dictionary in chunks with dynamic timing to reduce performance impact
-- Supports adding personal corrections
+- Includes over 20,000 entries for correction
+- Lazy loads the correction dictionary in chunks with dynamic timing to reduce startup performance impact
+- Includes user command for adding personal corrections
+- Includes UI for editing personal corrections
 
 ## Installing (lazy.nvim)
 
@@ -16,12 +17,13 @@
   "https://github.com/ck-zhang/mistake.nvim",
 }
 ```
-## Adding Custom Corrections
+## Personal Corrections
 
-To add your own corrections, edit the custom dictionary file:
-```shell
-nvim ~/.config/nvim/mistake_custom_dict.lua
-```
+To add your own corrections, use `:MistakeAdd`;
+to edit your personal dictionary, use `:MistakeEdit`.
+
+These updates will take effect immediately, no restart required.
+
 ## Feedback
 
-Please create an issue for any faulty corrections you encounter, the entries are processed with NLTK to minimize faulty corrections, but I can't check them all.
+Please create a PR for any faulty corrections you encounter, the entries are processed with NLTK to minimize faulty corrections, but quality isn't guaranteed.
