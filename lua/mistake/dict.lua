@@ -4670,7 +4670,6 @@ return {
 	["hastly"] = "hastily",
 	["appropricate"] = "appropriate",
 	["overlaop"] = "overlap",
-	["startup"] = "start",
 	["dependendency"] = "dependency",
 	["incompabile"] = "incompatible",
 	["methon"] = "method",
