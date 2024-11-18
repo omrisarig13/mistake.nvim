@@ -17081,7 +17081,6 @@ return {
 	["samper"] = "sampler",
 	["maind"] = "main",
 	["aso"] = "also",
-	["controlled"] = "uncontrolled",
 	["oncurrent"] = "Concurrent",
 	["keybard"] = "keyboard",
 	["Viewe"] = "View",
