@@ -17061,7 +17061,6 @@ return {
 	["amoungst"] = "amongst",
 	["paralellism"] = "parallelism",
 	["Dependend"] = "Dependent",
-	["asserts"] = "assets",
 	["observser"] = "observer",
 	["Ambiant"] = "Ambient",
 	["secrure"] = "secure",
