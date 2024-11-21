@@ -2243,7 +2243,6 @@ return {
 	["tombsone"] = "tombstone",
 	["Complile"] = "Compile",
 	["prerequisiste"] = "prerequisite",
-	["installed"] = "install",
 	["lifeime"] = "lifetime",
 	["perserve"] = "preserve",
 	["inser"] = "insert",
