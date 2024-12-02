@@ -12858,7 +12858,6 @@ return {
 	["travrse"] = "traverse",
 	["Raduis"] = "Radius",
 	["sequncialy"] = "sequentially",
-	["connects"] = "contents",
 	["Theif"] = "Thief",
 	["acidentially"] = "accidentally",
 	["loginstead"] = "instead",
