@@ -11661,7 +11661,6 @@ return {
 	["sitcky"] = "sticky",
 	["nothng"] = "nothing",
 	["Exteremely"] = "Extremely",
-	["codes"] = "comes",
 	["arguument"] = "argument",
 	["transacation"] = "transaction",
 	["spporting"] = "supporting",
