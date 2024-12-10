@@ -2065,7 +2065,6 @@ return {
 	["deply"] = "deploy",
 	["sectio"] = "section",
 	["offfset"] = "offset",
-	["published"] = "publisher",
 	["additionall"] = "additionally",
 	["excdeed"] = "exceed",
 	["inadvertantly"] = "inadvertently",
