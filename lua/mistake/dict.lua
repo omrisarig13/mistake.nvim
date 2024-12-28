@@ -18015,7 +18015,6 @@ return {
 	["sesstions"] = "sessions",
 	["Subbscribe"] = "Subscribe",
 	["clusure"] = "closure",
-	["words"] = "works",
 	["expressability"] = "expressibility",
 	["Repeate"] = "Repeat",
 	["terminatio"] = "termination",
