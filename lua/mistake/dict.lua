@@ -5385,7 +5385,6 @@ return {
 	["replase"] = "replace",
 	["Ptouch"] = "touch",
 	["perpose"] = "purpose",
-	["kr"] = "ka",
 	["orghogonal"] = "orthogonal",
 	["correcly"] = "correctly",
 	["conroller"] = "controller",
