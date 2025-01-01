@@ -9658,7 +9658,6 @@ return {
 	["tubale"] = "tunable",
 	["Calclate"] = "Calculate",
 	["curosr"] = "cursor",
-	["email"] = "mail",
 	["Pasport"] = "Passport",
 	["Serilize"] = "Serialize",
 	["splate"] = "splat",
