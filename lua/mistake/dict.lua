@@ -2980,7 +2980,6 @@ return {
 	["Natie"] = "Native",
 	["Elixr"] = "Elixir",
 	["ambigious"] = "ambiguous",
-	["started"] = "starter",
 	["Studo"] = "Studio",
 	["Rrename"] = "Rename",
 	["regarless"] = "regardless",
