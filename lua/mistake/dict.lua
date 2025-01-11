@@ -2362,7 +2362,6 @@ return {
 	["retieve"] = "retrieve",
 	["wihch"] = "which",
 	["fufill"] = "fulfill",
-	["ans"] = "and",
 	["chedk"] = "check",
 	["Subverison"] = "Subversion",
 	["flie"] = "file",
