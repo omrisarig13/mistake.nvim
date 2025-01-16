@@ -1469,7 +1469,6 @@ return {
 	["becaue"] = "because",
 	["serever"] = "server",
 	["certificiate"] = "certificate",
-	["exits"] = "exist",
 	["Perfom"] = "Perform",
 	["exclusing"] = "excluding",
 	["tyoe"] = "type",
