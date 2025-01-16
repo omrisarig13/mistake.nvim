@@ -1,6 +1,6 @@
 # mistake.nvim
 
-![Demo](https://github.com/user-attachments/assets/06167e5a-43cf-460b-b750-6fca75010f90)
+![Demo](https://github.com/user-attachments/assets/9dea602d-588d-4ca2-8872-29ebb3d0b864)
 
 **mistake.nvim** is a spelling auto correct plugin for Neovim based on [GitHub's *"Fixed typo"* commits](https://github.com/mhagiwara/github-typo-corpus).
 
