@@ -7506,7 +7506,6 @@ return {
 	["Bootsrap"] = "Bootstrap",
 	["Descripton"] = "Description",
 	["Rebuid"] = "Rebuild",
-	["creating"] = "creation",
 	["sublcass"] = "subclass",
 	["delcare"] = "declare",
 	["Advansed"] = "Advanced",
