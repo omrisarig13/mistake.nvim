@@ -4924,7 +4924,6 @@ return {
 	["COMPLILE"] = "COMPILE",
 	["PROGRAMATIC"] = "PROGRAMMATIC",
 	["Eaxmples"] = "Example",
-	["com"] = "come",
 	["timesif"] = "times",
 	["Resposne"] = "Response",
 	["pgae"] = "page",
