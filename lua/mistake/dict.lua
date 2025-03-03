@@ -20895,9 +20895,7 @@ return {
 	["carismatic"] = "charismatic",
 	["Carmalite"] = "Carmelite",
 	["Carnagie"] = "Carnegie",
-	["Carnagie-Mellon"] = "Carnegie-Mellon",
 	["Carnigie"] = "Carnegie",
-	["Carnigie-Mellon"] = "Carnegie-Mellon",
 	["carreer"] = "career",
 	["carrers"] = "careers",
 	["Carribbean"] = "Caribbean",
@@ -23625,8 +23623,4 @@ return {
 	["youseff"] = "yousef",
 	["ytou"] = "you",
 	["zeebra"] = "zebra",
-	["alltime"] = "all-time",
-	["antiapartheid"] = "anti-apartheid",
-	["Coca Cola"] = "Coca-Cola",
-	["co-incided"] = "coincided",
 }
