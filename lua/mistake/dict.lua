@@ -23629,13 +23629,4 @@ return {
 	["antiapartheid"] = "anti-apartheid",
 	["Coca Cola"] = "Coca-Cola",
 	["co-incided"] = "coincided",
-	["aircrafts\'"] = "aircraft\'s",
-	["didnt"] = "didn\'t",
-	["doesnt"] = "doesn\'t",
-	["dosen\'t"] = "doesn\'t",
-	["hasnt"] = "hasn\'t",
-	["isnt"] = "isn\'t",
-	["theyre"] = "they\'re",
-	["todays"] = "today\'s",
-	["wasnt"] = "wasn\'t",
 }
