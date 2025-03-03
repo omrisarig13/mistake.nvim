@@ -2,10 +2,10 @@
 
 ![Demo](https://github.com/user-attachments/assets/9dea602d-588d-4ca2-8872-29ebb3d0b864)
 
-**mistake.nvim** is a spelling auto correct plugin for Neovim based on [GitHub's *"Fixed typo"* commits](https://github.com/mhagiwara/github-typo-corpus).
+**mistake.nvim** is a spelling autocorrect plugin for Neovim, based on [GitHub's *"Fixed typo"* commits](https://github.com/mhagiwara/github-typo-corpus) and common misspellings from [Wikipedia](https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings).
 
 ## Features
-- Includes over 20,000 entries for correction
+- Includes over 23k entries for correction
 - Lazy loads the correction dictionary in chunks with dynamic timing to reduce startup performance impact
 - Includes user command for adding personal corrections
 - Includes UI for editing personal corrections
