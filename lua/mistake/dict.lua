@@ -8909,7 +8909,6 @@ return {
 	["Triger"] = "Trigger",
 	["Managable"] = "Manageable",
 	["prodiction"] = "production",
-	["listened"] = "listed",
 	["axymmetric"] = "asymmetric",
 	["animatiing"] = "animating",
 	["idential"] = "identical",
