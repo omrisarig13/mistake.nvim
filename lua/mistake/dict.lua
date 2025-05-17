@@ -20315,7 +20315,6 @@ return {
 	["dimenionsality"] = "dimensionality",
 	["analogrous"] = "analogous",
 	["inspitation"] = "inspiration",
-	["internet"] = "internal",
 	["ammortize"] = "amortize",
 	["depedant"] = "dependent",
 	["nowh"] = "now",
