@@ -260,6 +260,18 @@ M.edit_entries = function()
 		end
 	end
 
+	table.sort(lines, function(first, second)
+		local first_is_not = vim.startswith(first, "!")
+		local second_is_not = vim.startswith(second, "!")
+		if first_is_not and not second_is_not then
+			return false
+		end
+		if not first_is_not and second_is_not then
+			return true
+		end
+		return string.lower(first) < string.lower(second)
+	end)
+
 	local buf = vim.api.nvim_create_buf(false, false)
 
 	vim.api.nvim_buf_set_name(buf, '[MistakeEdit]')
