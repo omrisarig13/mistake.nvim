@@ -253,7 +253,11 @@ M.edit_entries = function()
 
 	local lines = {}
 	for typo, correction in pairs(custom_dict) do
-		table.insert(lines, typo .. " -> " .. correction)
+		if typo ~= correction then
+			table.insert(lines, typo .. " -> " .. correction)
+		else
+			table.insert(lines, "!" .. typo)
+		end
 	end
 
 	local buf = vim.api.nvim_create_buf(false, false)
@@ -287,7 +291,7 @@ M.edit_entries = function()
 	vim.api.nvim_set_option_value('readonly', false, {buf=buf})
 
 	vim.cmd([[
-		syntax match MistakeSeparator /->/
+		syntax match MistakeSeparator /\(->\)\|!/
 		highlight link MistakeSeparator Operator
 	]])
 
@@ -300,13 +304,20 @@ M.edit_entries = function()
 				if line == '' then
 					goto continue
 				end
-				local parts = vim.split(line, '%s*->%s*')
-				if #parts ~= 2 then
-					vim.api.nvim_echo({{'Error on line ' .. i .. ': Each line must contain exactly one "->" separator.\n'}}, true, {err=true})
-					return
+				local typo = ""
+				local correction = ""
+				if vim.startswith(line, "!") then
+					typo = vim.trim(string.sub(line, 2))
+					correction = typo
+				else
+					local parts = vim.split(line, '%s*->%s*')
+					if #parts ~= 2 then
+						vim.api.nvim_echo({{'Error on line ' .. i .. ': Each line either start with "!" or contain exactly one "->" separator.'}}, true, {err=true})
+						return
+					end
+					typo = vim.trim(parts[1])
+					correction = vim.trim(parts[2])
 				end
-				local typo = vim.trim(parts[1])
-				local correction = vim.trim(parts[2])
 				if typo == '' or correction == '' then
 					vim.api.nvim_echo({{'Error on line ' .. i .. ': Typo and correction cannot be empty.\n'}}, true, {err=true})
 					return
