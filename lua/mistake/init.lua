@@ -86,7 +86,9 @@ M.setup = function(opts)
 				local typo = entries[i][1]
 				local correction = entries[i][2]
 				if not M.current_dict[typo] then
-					vim.cmd(string.format("iabbrev %s %s", typo, correction))
+					if typo ~= correction then
+						vim.cmd(string.format("iabbrev %s %s", typo, correction))
+					end
 					M.current_dict[typo] = correction
 				end
 			end
@@ -137,13 +139,17 @@ M.setup = function(opts)
 		end
 
 		for typo, correction in pairs(to_add) do
-			vim.cmd(string.format("iabbrev %s %s", typo, correction))
+			if typo ~= correction then
+				vim.cmd(string.format("iabbrev %s %s", typo, correction))
+			end
 			M.current_dict[typo] = correction
 		end
 
 		for typo, correction in pairs(to_update) do
 			vim.cmd(string.format("silent! iunabbrev %s", typo))
-			vim.cmd(string.format("iabbrev %s %s", typo, correction))
+			if typo ~= correction then
+				vim.cmd(string.format("iabbrev %s %s", typo, correction))
+			end
 			M.current_dict[typo] = correction
 		end
 
