@@ -38,12 +38,37 @@ M.setup = function(opts)
 		M.add_entry_under_cursor()
 	end, {})
 
-	M.load_abbreviations = function()
-		M.load_chunked_entries(opts.dict_file, 100)
-		M.load_chunked_entries(opts.custom_dict_file, 100)
+	local function execute_sequencially(functions)
+		local finished = { false }
+		local index = 1
+
+		local function execute_next_when_ready()
+			if finished[1] then
+				index = index + 1
+				if index > #functions then
+					return
+				end
+				finished[1] = false
+				functions[index](finished)
+			end
+			vim.defer_fn(execute_next_when_ready, 100)
+		end
+		functions[index](finished)
+		execute_next_when_ready()
 	end
 
-	M.load_chunked_entries = function(dict_file, entries_per_chunk)
+	M.load_abbreviations = function()
+		execute_sequencially({
+			function(finished)
+				M.load_chunked_entries(opts.custom_dict_file, 100, finished)
+			end,
+			function(finished)
+				M.load_chunked_entries(opts.dict_file, 100, finished)
+			end,
+		})
+	end
+
+	M.load_chunked_entries = function(dict_file, entries_per_chunk, finished)
 		local dict = loadfile(dict_file)()
 		local entries = {}
 		for typo, correction in pairs(dict) do
@@ -73,6 +98,8 @@ M.setup = function(opts)
 			index = limit + 1
 			if index <= #entries then
 				vim.defer_fn(load_next_chunk, new_delay)
+			else
+				finished[1] = true
 			end
 		end
 
