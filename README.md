@@ -40,7 +40,7 @@ If keymaps are wanted for personal corrections, the following configuration snip
 
 ## Personal Corrections
 
-To add your own corrections, use `:MistakeAdd`;
+To add your own corrections, use `:MistakeAdd` and `:MistakeAddCurrentWord`;
 to edit your personal dictionary, use `:MistakeEdit`.
 
 These updates will take effect immediately, no restart required.
