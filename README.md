@@ -14,7 +14,7 @@
 
 ```lua
 {
-  "https://github.com/ck-zhang/mistake.nvim",
+  "https://github.com/omrisarig13/mistake.nvim",
 }
 ```
 
@@ -24,7 +24,7 @@ If keymaps are wanted for personal corrections, the following configuration snip
 
 ```lua
   {
-    'ck-zhang/mistake.nvim',
+    'omrisarig13/mistake.nvim',
     config = function()
       local plugin = require 'mistake'
       vim.defer_fn(function()
