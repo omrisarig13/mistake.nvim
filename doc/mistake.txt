@@ -1,0 +1,206 @@
+*mistake.nvim.txt*    Spelling autocorrect plugin for Neovim
+
+==============================================================================
+CONTENTS                                                          *mistake.nvim*
+
+    1. Introduction..............................................|mistake-intro|
+    2. Features..................................................|mistake-features|
+    3. Installation..............................................|mistake-installation|
+    4. Usage.....................................................|mistake-usage|
+    5. Commands..................................................|mistake-commands|
+    6. Configuration.............................................|mistake-config|
+    7. Keybindings...............................................|mistake-keybindings|
+    8. Misc......................................................|mistake-misc|
+
+==============================================================================
+1. Introduction                                                  *mistake-intro*
+
+`mistake.nvim` is a spelling autocorrect plugin for Neovim, based on
+GitHub's "Fixed typo" commits and common misspellings from Wikipedia.
+
+The plugin is designed to automatically correct common spelling mistakes using
+vim's |:abbreviate| mechanism, laveraging a large set of commot mistakes as
+well as personal correction mechanism.
+
+==============================================================================
+2. Features                                                   *mistake-features*
+
+- Includes over 23k entries for correction
+- Lazy loads the correction dictionary in chunks with dynamic timing to reduce
+  startup performance impact
+- Includes user command for adding personal corrections
+- Includes UI for editing corrections
+
+==============================================================================
+3. Installation                                           *mistake-installation*
+
+lazy.nvim ~
+>
+    {
+      "https://github.com/ck-zhang/mistake.nvim",
+    }
+<
+
+==============================================================================
+4. Usage                                                         *mistake-usage*
+
+Upon installation, |mistake.nvim| will automatically correct common spelling
+mistakes as you type. Personal corrections can be added and managed using the
+provided commands and UI.
+
+==============================================================================
+5. Commands                                                   *mistake-commands*
+
+The plugin provides the following user commands:
+
+                                                                   *:MistakeAdd*
+:MistakeAdd
+
+        Adds a new mistake word, which is a pair of typo and correction.
+
+        When running this command, a prompt will open, requesting the new typo
+        word and correction word to be added.
+
+        The new typo and corrections are being applied immediately, no restart
+        is required.
+
+                                                        *:MistakeAddCurrentWord*
+:MistakeAddCurrentWord
+
+        Adds a new mistake word, taking the word under the cursor as the typo
+        word, and asking for the correction word as input.
+
+                                                                  *:MistakeEdit*
+:MistakeEdit
+
+        Opens a |MistakeEdit-file| buffer containing all the user's commands.
+        which can be editted and updated.
+        Upon saving of this buffer, the updated abbreviations (added and
+        removed) are applied to the current session.
+
+
+==============================================================================
+6. Configuration                                                *mistake-config*
+
+All the examples below are in lua. You can use the same examples in `.vim`
+files by wrapping them in lua heredoc like this:
+
+>
+    lua << END
+    require('lualine').setup()
+    END
+<
+
+For more information, check out `:help lua-heredoc`.
+
+4.1 Default Configuration                        *mistake-default-configuration*
+
+By default, the following configuration is set up for the plugin.
+>
+    require('mistake').setup {
+        dict_file = script_path .. "dict.lua"'
+        custom_dict_file = vim.fn.stdpath("config") .. "/mistake_custom_dict.lua"
+        replace_after_addition = true
+    }
+<
+4.2 Configuration Options                                      *mistake-options*
+
+4.2.1 dict_file                                              *mistake-dict-file*
+
+Path to the global dictionary file.
+By default, this value points to the dictionary which is available as part of
+this plugin, containing over 23k of common errors and fixes.
+
+4.2.2 custom_dict_file                                *mistake-custom-dict-file*
+
+Path to a local dictionary file. This file is editted by the user when adding
+new abbreviations to the system.
+By default, a new file is created under the configuration path, called
+`mistake_custom_dict.lua`.
+
+4.2.3 replace_after_addition                    *mistake-replace-after-addition*
+
+A flag controlling whether or not the plugin will run a find-and-replace
+operation after adding a new abbreviation to the system.
+This operation is useful to automtacially fix typos that are already existing
+in the current buffer.
+Defaults to true.
+
+==============================================================================
+7. Keybindings                                             *mistake-keybindings*
+
+
+Keybindings are not provided by default, but can be created.
+
+An example configuration to add keybindings for common functions using
+lazy.nvim is:
+
+>
+  {
+    'ck-zhang/mistake.nvim',
+    config = function()
+      local plugin = require 'mistake'
+      vim.defer_fn(function()
+        plugin.setup()
+      end, 500)
+
+      vim.keymap.set('n', '<leader>ma', plugin.add_entry, { desc = '[M]istake [A]dd entry' })
+      vim.keymap.set('n', '<leader>me', plugin.edit_entries, { desc = '[M]istake [E]dit entries' })
+      vim.keymap.set('n', '<leader>mc', plugin.add_entry_under_cursor, { desc = '[M]istake add [C]urrent word' })
+    end,
+  }
+<
+
+==============================================================================
+8. Misc                                                           *mistake-misc*
+
+8.1 Custom and Global dictionary                      *mistake-custom-vs-global*
+
+The plugin comes with a global dictionary containing a lot of common mistakes
+and corrections for them.
+
+In addition to this dictionary, the plugin provides the user with a custom
+dict, that can be editted using the plugin interface functions.
+
+The custom dictionary always takes precedence over the global dictionary.
+Therefore, it is possible to change abbreviations from the global dict by
+creating an abbreviation in the local dict with the same typo word.
+To remove a typo from the global dict, it is possible to create a local
+pair, where the correction and the typo holds the same value.
+
+If you encounter a faulty correction, consider creating a PR for changing the
+global dictionary.
+
+8.2 MistakeEdit file                                          *MistakeEdit-file*
+
+The plugin prodives a filetype for editting a buffer with correction, called
+MistakeEdit.
+
+This filetype is being used by the |MistakeEdit| command.
+
+The file contains 2 different types of statement, correction pairs and
+typo removal.
+
+                                                      *mistake-correction-pairs*
+Correction pairs are pairs of typo and corrections, which are created as
+vim abbreviates. The syntax of these correction pairs are:
+
+>
+    <typo> -> <correction>
+<
+
+                                                          *mistake-typo-removal*
+When removing corrections from the global dictionary, only the "typo" is
+needed. The syntax of typo removal in this file is:
+
+>
+    !<typo>
+<
+When the buffer is opened, the mistakes are sorted alphabetically and to
+correction-pairs first, followed by the typo removal.
+It is not necessary to keep the file sorted, it'll be automatically sorted
+when opened again.
+
+==============================================================================
+
+vim:tw=78:ts=8:ft=help:norl:
